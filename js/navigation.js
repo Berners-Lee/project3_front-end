@@ -1,4 +1,8 @@
 // NAV BAR 1
+
+
+// NAV BAR 2
+
 $('#main').click(function(){
 	$('#login').hide();
 	$('#home').show();
@@ -6,7 +10,6 @@ $('#main').click(function(){
 	$('#products').hide();
 });
 
-// NAV BAR 2
 $('#cart-show').click(function(){
 	$('#login').hide();
 	$('#home').hide();
