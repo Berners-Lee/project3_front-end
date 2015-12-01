@@ -35,4 +35,12 @@ var form2object = function(form) {
   return data;
 };
 
+var callback = function(error, data) {
+  if (error) {
+    console.error(error);
+    console.log('status: ' + error.status + ', error: ' +error.error);
+    return;
+  }
+  console.log(JSON.stringify(data, null, 4));
+};
 
