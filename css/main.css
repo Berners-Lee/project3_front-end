@@ -2520,7 +2520,17 @@ h2.title {
   color: #FE980F;
 }
 
+.cart {
+  background-color: white;
+}
+
+#login {display: none;}
+#home {display: block;}
+#cart {display: none;}
+#products {display: none;}
 
 #cart-show:hover{cursor: pointer;}
 #login-show:hover{cursor: pointer;}
+#products-show:hover{cursor: pointer;}
+
 
