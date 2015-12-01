@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a id='main'><img src="images/home/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -86,7 +86,6 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li id='products-show'>Dorm</a></li>
@@ -123,39 +122,36 @@
 							<div class="carousel-inner">
 								<div class="item active">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
-										<h2>Free E-Commerce Template</h2>
+										<h1><span>D</span>ORM</h1>
+										<h2>All your dorm needs</h2>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-										<img src="images/home/pricing.png"  class="pricing" alt="" />
+										<img src="https://secure.img2.wfrcdn.com/lf/47/hash/36248/15986129/1/Superman-Emblem-Bedding-Collection-CRVR1012.jpg" class="girl img-responsive" alt="" height="484" width="441" />
 									</div>
 								</div>
 								<div class="item">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
-										<h2>100% Responsive Design</h2>
+										<h1><span>F</span>UN</h1>
+										<h2>Out door activities!</h2>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
-										<img src="images/home/pricing.png"  class="pricing" alt="" />
+										<img src="https://www.admitsee.com/uploads/kan_jam.jpg" class="girl img-responsive" alt="" height="484" width="441" />
 									</div>
 								</div>
 
 								<div class="item">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
-										<h2>Free Ecommerce Template</h2>
+										<h1><span>S</span>CHOOL</h1>
+										<h2>Get to class in style</h2>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-										<img src="images/home/pricing.png" class="pricing" alt="" />
+										<img src="http://scene7.targetimg1.com/is/image/Target/16817455?wid=480&hei=480" class="girl img-responsive" alt="" height="484" width="441"  />
 									</div>
 								</div>
 
@@ -424,28 +420,24 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<script id="product-index" type="text-x-handlebars-template">
-										<div class="productinfo text-center">
-											<img src="images/shop/product12.jpg" alt="" />
+									<div class="productinfo text-center">
+										<img src="images/shop/product12.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-										</div>
-									</script>
+									</div>
 								</div>
 							</div>
 						</div>
-
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -501,7 +493,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -521,7 +512,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -653,9 +643,14 @@
 										</div>
 									</div>
 								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
 							</div>
 						</div>
-
 					</div><!--features_items-->
 				</div>
 			</div>
@@ -733,13 +728,12 @@
 
 
 
-  <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/main.js"></script>
-  <script type="text/javascript" src="../assets/handlebars-v3.0.3.js"></script>
-  <script src="js/navigation.js"></script>
-  <script type="text/javascript" src="js/authAPI.js" defer charset="utf-8"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script type="text/javascript" src="js/authAPI.js" defer charset="utf-8"></script>
 </body>
 </html>
