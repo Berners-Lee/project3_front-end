@@ -7,6 +7,7 @@ $('#products-show').click(function(e){
     console.log(JSON.stringify(data,null,4));
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
     var productHTML = productIndexTemplate({product:data});
+    $('#populate-products').html('');
     $('#populate-products').append(productHTML);
   }).fail(function(data){
     console.error(data);
