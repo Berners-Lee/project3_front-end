@@ -34,4 +34,3 @@ $('#products-show').click(function(){
 });
 
 
-
