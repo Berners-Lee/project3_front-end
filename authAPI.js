@@ -68,7 +68,7 @@ $('#register').on('submit', function(e) {
     e.preventDefault();
   });
 
-  $('#login').on('submit', function(e) {
+  $('#loginform').on('submit', function(e) {
     var credentials = form2object(this);
     var cb = function cb(error, data) {
       if (error) {
