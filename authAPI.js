@@ -10,12 +10,22 @@ var authAPI = {
     }).fail(function(jqhxr, status, error){
       cb({jqhxr: jqhxr, statur: status, error: error});
       });
-    },
+  },
 
   register: function(credentials, callback){
     this.ajax({
       method: 'POST',
       url: this.api_url +'/signup',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify(credentials),
+      dataType: 'json'
+    }, callback);
+  },
+
+  login: function(credentials, callback){
+    this.ajax({
+      method: 'POST',
+      url: this.api_url +'/login',
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
       dataType: 'json'
@@ -38,10 +48,8 @@ var form2object = function(form) {
 var callback = function(error, data) {
   if (error) {
     console.error(error);
-    console.log('status: ' + error.status + ', error: ' +error.error);
-    return;
   }
-  console.log(JSON.stringify(data, null, 4));
+  console.log(JSON.stringify(data));
 };
 
 $(document).ready(function(){
@@ -57,6 +65,20 @@ $('#register').on('submit', function(e) {
     console.log('Registered!');
     };
     authAPI.register(credentials, cb);
+    e.preventDefault();
+  });
+
+  $('#login').on('submit', function(e) {
+    var credentials = form2object(this);
+    var cb = function cb(error, data) {
+      if (error) {
+        callback(error);
+        return;
+      }
+      callback(null, data);
+      console.log(data);
+    };
+    authAPI.login(credentials, cb);
     e.preventDefault();
   });
 
