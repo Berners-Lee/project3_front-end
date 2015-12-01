@@ -424,24 +424,28 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
+
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/shop/product12.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
+									<script id="product-index" type="text-x-handlebars-template">
+										<div class="productinfo text-center">
+											<img src="images/shop/product12.jpg" alt="" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-									</div>
+										<div class="product-overlay">
+											<div class="overlay-content">
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</script>
 								</div>
 							</div>
 						</div>
+
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -497,6 +501,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -516,6 +521,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -647,14 +653,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
 							</div>
 						</div>
+
 					</div><!--features_items-->
 				</div>
 			</div>
@@ -732,12 +733,13 @@
 
 
 
-    <script src="js/jquery.js"></script>
+  <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/navigation.js"></script>
-    <script type="text/javascript" src="js/authAPI.js" defer charset="utf-8"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="../assets/handlebars-v3.0.3.js"></script>
+  <script src="js/navigation.js"></script>
+  <script type="text/javascript" src="js/authAPI.js" defer charset="utf-8"></script>
 </body>
 </html>
