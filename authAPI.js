@@ -47,7 +47,7 @@ var form2object = function(form) {
 
 var callback = function(error, data) {
   if (error) {
-    console.error(error);
+    console.log(JSON.stringify(error));
   }
   console.log(JSON.stringify(data));
 };
