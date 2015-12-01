@@ -174,12 +174,6 @@
 	<div id="cart" class="cart">
 		<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Shopping Cart</li>
-				</ol>
-			</div>
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
@@ -206,9 +200,7 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
 								</div>
 							</td>
 							<td class="cart_total">
@@ -232,9 +224,7 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" id="cart_quantity_up" href=""> + </a>
 									<input class="cart_quantity_input" id="cart_quantity" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" id="cart_quantity_down" href=""> - </a>
 								</div>
 							</td>
 							<td class="cart_total">
@@ -257,9 +247,7 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
 								</div>
 							</td>
 							<td class="cart_total">
@@ -271,6 +259,13 @@
 						</tr>
 					</tbody>
 				</table>
+				<div class="total_area col-sm-6" style="float:right; margin: auto; text-align: right">
+					<ul>
+						<li><span style="float: left">Total</span> $61</li>
+					</ul>
+					<a class="btn btn-default update" href="">Update</a>
+					<a class="btn btn-default check_out" href="">Check Out</a>
+				</div>
 			</div>
 		</div>
 		</section> <!--/#cart_items-->
@@ -337,16 +332,7 @@
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="total_area">
-						<ul>
-							<li>Cart Sub Total <span>$59</span></li>
-							<li>Eco Tax <span>$2</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>$61</span></li>
-						</ul>
-							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="">Check Out</a>
-					</div>
+
 				</div>
 			</div>
 		</div>
