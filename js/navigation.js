@@ -5,12 +5,14 @@ $('#cart-show').click(function(){
 	$('#login').hide();
 	$('#home').hide();
 	$('#cart').show();
+	$('#products').hide();
 });
 
 $('#login-show').click(function(){
 	$('#cart').hide();
 	$('#home').hide();
 	$('#login').show();
+	$('#products').hide();
 });
 
 
