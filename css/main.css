@@ -2521,3 +2521,6 @@ h2.title {
 }
 
 
+#cart-show:hover{cursor: pointer;}
+#login-show:hover{cursor: pointer;}
+
