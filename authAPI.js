@@ -2,7 +2,7 @@
 
 var authAPI = {
 
-  api_url: 'https://localhost:3000',
+  api_url: 'http://localhost:3000',
 
   ajax: function(config, cb){
     $.ajax(config).done(function(data, textStatus, jqhxr){
@@ -43,4 +43,24 @@ var callback = function(error, data) {
   }
   console.log(JSON.stringify(data, null, 4));
 };
+
+$(document).ready(function(){
+
+$('#register').on('submit', function(e) {
+    var credentials = form2object(this);
+    var cb = function cb(error, data) {
+      if (error) {
+        callback(error);
+        return;
+      }
+    callback(null, data);
+    console.log('Registered!');
+    };
+    authAPI.register(credentials, cb);
+    e.preventDefault();
+  });
+
+
+
+});
 
