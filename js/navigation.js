@@ -42,6 +42,7 @@ $('#checkout-show').click(function(){
 	$('#home').hide();
 	$('#login').hide();
 	$('#products').hide();
+	$('#shop-hist').hide();
 	$('#checkout').show();
 });
 
