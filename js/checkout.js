@@ -1,6 +1,6 @@
 'use strict'
 
-var histAPI = {
+var paymentAPI = {
 
   api_url: 'http://localhost:3000',
 
@@ -29,7 +29,7 @@ var histAPI = {
 
 $(document).ready(function(){
 
-$('#cart-show').on('click', function(e) {
+$('#submit-payment').on('click', function(e) {
     var cb = function cb(error, data) {
       if (error) {
         callback(error);
@@ -37,7 +37,7 @@ $('#cart-show').on('click', function(e) {
       }
       callback(null, data);
     };
-    histAPI.showShopHistory(cb);
+    paymentAPI.createOrder(cb);
     e.preventDefault();
   });
 
