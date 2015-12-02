@@ -8,6 +8,7 @@ $('#main').click(function(){
 	$('#home').show();
 	$('#cart').hide();
 	$('#products').hide();
+	$('#checkout').hide();
 });
 
 $('#cart-show').click(function(){
@@ -15,6 +16,7 @@ $('#cart-show').click(function(){
 	$('#home').hide();
 	$('#cart').show();
 	$('#products').hide();
+	$('#checkout').hide();
 });
 
 $('#login-show').click(function(){
@@ -22,6 +24,7 @@ $('#login-show').click(function(){
 	$('#home').hide();
 	$('#login').show();
 	$('#products').hide();
+	$('#checkout').hide();
 });
 
 
@@ -31,6 +34,15 @@ $('#products-show').click(function(){
 	$('#home').hide();
 	$('#login').hide();
 	$('#products').show();
+	$('#checkout').hide();
+});
+
+$('#checkout-show').click(function(){
+	$('#cart').hide();
+	$('#home').hide();
+	$('#login').hide();
+	$('#products').hide();
+	$('#checkout').show();
 });
 
 
