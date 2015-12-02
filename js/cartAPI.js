@@ -60,8 +60,11 @@ $(document).ready(function(){
         url: "http://localhost:3000/products",
         dataType: "json"
       }).done(function(data){
-        console.log(JSON.stringify(data,null,4));
-        console.log(filterProductByCart(data,profile[0].cart));
+        var cart = filterProductByCart(data,profile[0].cart);
+        var cartIndexTemplate = Handlebars.compile($('#cart-index').html());
+        var cartHTML = cartIndexTemplate({cart:cart});
+        $('#cart-table').html('');
+        $('#cart-table').append(cartHTML);
       }).fail(function(data){
         console.error(data);
       });

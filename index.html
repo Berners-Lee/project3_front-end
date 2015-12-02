@@ -187,78 +187,34 @@
 							<td></td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
+					<tbody id="cart-table"></tbody>
+						<script id="cart-index" type="text-x-handlebars-template">
+             	{{#each cart}}
+							<tr>
+								<td class="cart_product">
+									<a href=""><img src={{image}} style="width: 110px; height: 110px"></a>
+								</td>
+								<td class="cart_description">
+									<h4><a href="">{{name}}</a></h4>
+								</td>
+								<td class="cart_price">
+									<p>${{price}}</p>
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price">${{price}}</p>
+								</td>
+								<td class="cart_delete">
+									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								</td>
+							</tr>
+							{{/each}}
+            </script>
 
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" id="cart_quantity" type="text" name="quantity" value="1" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-					</tbody>
 				</table>
 				<div class="total_area col-sm-6" style="float:right; margin: auto; text-align: right">
 					<ul>
