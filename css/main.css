@@ -2524,6 +2524,10 @@ h2.title {
   background-color: white;
 }
 
+.cart h1{
+  font-color: black;
+}
+
 #login {display: none;}
 #home {display: block;}
 #cart {display: none;}
@@ -2533,5 +2537,11 @@ h2.title {
 #login-show:hover{cursor: pointer;}
 #products-show:hover{cursor: pointer;}
 #main:hover{cursor: pointer;}
+
+
+
+.prev-orders p{
+  color: black;
+}
 
 
