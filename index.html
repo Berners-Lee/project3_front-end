@@ -37,7 +37,7 @@
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div><!--/header_top-->
@@ -210,40 +210,20 @@
 					<ul>
 						<li><span style="float: left">Total</span> $<span id="total-price"></span></li>
 					</ul>
-					<a class="btn btn-default update" href="">Update</a>
-					<a id="checkout-show" class="btn btn-default check_out">Check Out</a>
+					<a class="btn btn-default update" style="float: left">Update</a>
+						<form action="/charge" method="POST" id="checkout-show">
+						  <script
+						    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						    data-key="pk_test_NWkoskZLdjXlYqbHY3jG1wkN"
+						    data-image="/img/documentation/checkout/marketplace.png"
+						    data-name="Nozama"
+						    data-description="Ready to Checkout?"
+						    data-amount="2000"
+						    data-locale="auto">
+						  </script>
+						</form>
+
 				</div>
-			</div>
-			<div style="margin-left:900px; margin-top:90px;" id='checkout'>
-			<form action="" method="POST" id="payment-form">
-  				<span class="payment-errors"></span>
-
-  			<div class="form-row">
-   				<label>
-      				<span style="color: black;">Card Number</span>
-      				<input type="text" size="20" data-stripe="number"/>
-    			</label>
-  			</div>
-
-  			<div class="form-row">
-    			<label>
-      				<span style="color: black;">CVC</span>
-      				<input type="text" size="4" data-stripe="cvc"/>
-    			</label>
-  			</div>
-
-  			<div class="form-row">
-    			<label>
-      				<span style="color: black;">Expiration (MM/YYYY)</span>
-      				<input type="text" size="2" data-stripe="exp-month"/>
-      				<span>/</span>
-    				<input type="text" size="4" data-stripe="exp-year"/>
-    			</label>
-    			
-  			</div>
-
-  			<button id="submit-payment" type="submit">Submit Payment</button>
-			</form>
 			</div>
 		</div>
 
@@ -292,7 +272,7 @@
 			</div>
 		</div>
 		</section> <!--/#cart_items-->
-		
+
 	</div>
 
 
@@ -404,7 +384,7 @@
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								
+
 							</form>
 							<div class="social-icons pull-right">
 								<div>
