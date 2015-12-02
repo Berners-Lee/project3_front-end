@@ -60,18 +60,24 @@ $(document).ready(function(){
         url: "http://localhost:3000/products",
         dataType: "json"
       }).done(function(data){
-        var cart = filterProductByCart(data,profile[0].cart);
+        var cart = filterProductByCart(data,profile[0].cart)
+        cart = cart.filter(function(val) { return val !== null; });
+        var totalPrice = cart.reduce(function(sum, current){
+          return sum + parseFloat(current.price);
+        }, 0).toFixed(2);
         var cartIndexTemplate = Handlebars.compile($('#cart-index').html());
         var cartHTML = cartIndexTemplate({cart:cart});
         $('#cart-table').html('');
         $('#cart-table').append(cartHTML);
+        $('#total-price').html(totalPrice);
+
       }).fail(function(data){
         console.error(data);
       });
     });
   });
 
-  $('.update').click(function(){
+  $('#checkout').click(function(){
     authAPI.createOrder(function(err, data){
       if(err) console.error(err)
       console.log(data);

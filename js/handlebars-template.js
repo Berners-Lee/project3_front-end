@@ -12,5 +12,4 @@ $('#products-show').click(function(e){
   }).fail(function(data){
     console.error(data);
   });
-
 });
