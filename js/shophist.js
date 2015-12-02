@@ -1,6 +1,6 @@
 'use strict'
 
-var cartAPI = {
+var histAPI = {
 
   api_url: 'http://localhost:3000',
 
@@ -17,7 +17,7 @@ var cartAPI = {
     });
   },
 
-  getShopHistory: function(callback) {
+  showShopHistory: function(callback) {
     this.ajax({
       method: 'GET',
       url: this.api_url + '/orders',
@@ -29,7 +29,17 @@ var cartAPI = {
 
 $(document).ready(function(){
 
-
+$('#cart-show').on('click', function(e) {
+    var cb = function cb(error, data) {
+      if (error) {
+        callback(error);
+        return;
+      }
+      callback(null, data);
+    };
+    histAPI.showShopHistory(cb);
+    e.preventDefault();
+  });
 
 
 
