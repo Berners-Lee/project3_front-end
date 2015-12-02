@@ -5,11 +5,16 @@ var authAPI = {
   api_url: 'http://localhost:3000',
 
   ajax: function(config, cb){
+    $.ajaxSetup({
+      xhrFields: {
+        withCredentials: true
+      }
+    });
     $.ajax(config).done(function(data, textStatus, jqhxr){
       cb(null, data);
     }).fail(function(jqhxr, status, error){
       cb({jqhxr: jqhxr, statur: status, error: error});
-      });
+    });
   },
 
   register: function(credentials, callback){
@@ -28,6 +33,24 @@ var authAPI = {
       url: this.api_url +'/login',
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
+      dataType: 'json'
+    }, callback);
+  },
+
+  getProfile: function(callback) {
+    this.ajax({
+      method: 'GET',
+      url: this.api_url + '/profiles',
+      dataType: 'json'
+    }, callback);
+  },
+
+  createProfile: function(callback) {
+    this.ajax({
+      method: 'POST',
+      url: this.api_url + '/profiles',
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify({}),
       dataType: 'json'
     }, callback);
   }
@@ -75,10 +98,22 @@ $('#register').on('submit', function(e) {
         callback(error);
         return;
       }
-      callback(null, data);
-      console.log(data);
+      authAPI.getProfile(function(err, data){
+        if(err) console.error(error);
+        if(data.length > 0)
+          {console.log("has profile")}
+        else {
+          console.log("no profile");
+          authAPI.createProfile(callback);
+        };
+      });
     };
     authAPI.login(credentials, cb);
+
+    // authAPI.createProfile(function(err, data){
+    //     if(err) console.error(err)
+    //     console.log(data);
+    // });
     e.preventDefault();
   });
 
