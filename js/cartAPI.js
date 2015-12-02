@@ -44,4 +44,27 @@ $(document).ready(function(){
     cartAPI.addCart(productInfo, callback);
   });
 
+  $('#cart-show').click(function(){
+    authAPI.getProfile(function(err, profile){
+      console.log(profile[0].cart);
+      function filterProductByCart(obj){
+        var array = obj;
+        for (var i = 0; i<array.length; i++) {
+          if(profile[0].cart.indexOf(array[i]._id) === -1) {
+            delete array[i];}
+        }
+        return array;
+      };
+      $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/products",
+        dataType: "json"
+      }).done(function(data){
+        console.log(JSON.stringify(data,null,4));
+        console.log(filterProductByCart(data,profile[0].cart));
+      }).fail(function(data){
+        console.error(data);
+      });
+    });
+  });
 });
