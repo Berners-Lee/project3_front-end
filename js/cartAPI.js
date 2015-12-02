@@ -70,4 +70,11 @@ $(document).ready(function(){
       });
     });
   });
+
+  $('.update').click(function(){
+    authAPI.createOrder(function(err, data){
+      if(err) console.error(err)
+      console.log(data);
+    })
+  });
 });

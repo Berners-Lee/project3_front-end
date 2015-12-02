@@ -53,8 +53,17 @@ var authAPI = {
       data: JSON.stringify({}),
       dataType: 'json'
     }, callback);
-  }
+  },
 
+  createOrder: function(callback) {
+    this.ajax({
+      method: 'POST',
+      url: this.api_url + '/orders',
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify({}),
+      dataType: 'json'
+    }, callback);
+  }
 };
 
 var form2object = function(form) {
