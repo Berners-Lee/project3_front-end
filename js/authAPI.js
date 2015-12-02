@@ -92,11 +92,12 @@ $('#register').on('submit', function(e) {
   });
 
   $('#loginform').on('submit', function(e) {
+    e.preventDefault();
     var credentials = form2object(this);
-    var cb = function cb(error, data) {
+    var loginCb = function (error, data) {
       if (error) {
         callback(error);
-        return;
+        //return;
       }
       authAPI.getProfile(function(err, data){
         if(err) console.error(error);
@@ -108,13 +109,12 @@ $('#register').on('submit', function(e) {
         };
       });
     };
-    authAPI.login(credentials, cb);
+    authAPI.login(credentials, loginCb);
 
     // authAPI.createProfile(function(err, data){
     //     if(err) console.error(err)
     //     console.log(data);
     // });
-    e.preventDefault();
   });
 
 
