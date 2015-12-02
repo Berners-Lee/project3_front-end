@@ -210,7 +210,7 @@ a#scrollUp i{
 
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
 	background:none;
-	color:#fdb45e;
+	color:#35106E;
 }
 
 .search_box input {
@@ -263,7 +263,7 @@ ul.sub-menu {
 }
 
 .dropdown ul.sub-menu li .active{
-  color: #FDB45E;
+  color: #35106E;
   padding-left: 0;
 }
 
@@ -281,7 +281,7 @@ ul.sub-menu {
 }
 
 .navbar-nav li ul.sub-menu li a:hover{
-    color: #FDB45E;
+    color: #35106E;
 }
 
 .fa-angle-down{
