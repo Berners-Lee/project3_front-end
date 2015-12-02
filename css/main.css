@@ -87,35 +87,8 @@ a#scrollUp i{
 }
 
 
-.social-icons ul li a {
-  border: 0 none;
-  border-radius: 0;
-  color: #696763;
-  padding:0px;
-  display:inline-block;
-  float:none;
-}
-
-
-.social-icons ul li{
-	display:inline-block;
-  float:none;
-}
-
-.social-icons ul li a i {
-  padding: 11px 15px;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
-}
-
-.social-icons ul li a i:hover{
-  color: #fff;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
+.social-icons a {
+  color: black;
 }
 
 
@@ -137,6 +110,11 @@ a#scrollUp i{
 
 .fa-google-plus:hover  {
 	background:#CE3C2D;
+}
+
+.sm {
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .header-middle .container .row {
@@ -434,7 +412,7 @@ ul.sub-menu {
 .footer-widget .container {
   border-top: 1px solid #FFFFFF;
   padding-top: 15px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .single-widget h2 {
@@ -1838,22 +1816,6 @@ h2.title {
 
 
 
-.shopper-info p, 
-.bill-to p, 
-.order-message p {
-  color: #696763;
-  font-size: 20px;
-  font-weight: 300
-}
-
-
-.shopper-info .btn-primary {
-  background: #FE980F;
-  border: 0 none;
-  border-radius: 0;
-  margin-right: 15px;
-  margin-top: 20px;
-}
 
 
 .form-two, .form-one {
@@ -2098,4 +2060,6 @@ h2.title {
   color: black;
 }
 
-
+.social {
+  float: left;
+}
