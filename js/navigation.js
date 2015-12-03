@@ -27,6 +27,14 @@ $('#login-show').click(function(){
 	$('#checkout').hide();
 });
 
+$('#logout-show').click(function(){
+	$('#cart').hide();
+	$('#home').hide();
+	$('#login').show();
+	$('#products').hide();
+	$('#checkout').hide();
+});
+
 
 // NAV BAR 3
 $('#products-show').click(function(){
