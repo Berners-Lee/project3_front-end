@@ -184,7 +184,6 @@ $(document).ready(function(){
     })
   });
 
-
   $('#customButton').on('click', function(e) {
     e.preventDefault();
     // Open Checkout with further options
@@ -193,5 +192,22 @@ $(document).ready(function(){
       description: 'Reday to checkout?',
       amount: totalPrice*100
     });
+  });
+
+  $('#search-form').on('submit', function(e){
+    e.preventDefault();
+    var search = $('#search-input').val();
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:3000/products?name=" + search,
+      dataType: "json"
+    }).done(function(data){
+      console.log(data);
+    }).fail(function(data){
+      console.error(data);
+    });
+
+    // {name: input}
+
   });
 }); // end of document ready
