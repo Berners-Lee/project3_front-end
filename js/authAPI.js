@@ -86,18 +86,25 @@ var callback = function(error, data) {
 
 $(document).ready(function(){
 
+// var msg = function(message) {
+//   $('.message').text(message);
+// };
+
 $('#register').on('submit', function(e) {
+    e.preventDefault();
     var credentials = form2object(this);
     var cb = function cb(error, data) {
       if (error) {
         callback(error);
-        return;
+        // return;
       }
     callback(null, data);
     console.log('Registered!');
+    // msg = "You're registered! Now log in.";
+    $('.message').html("You're registered! Now log in.");
     };
     authAPI.register(credentials, cb);
-    e.preventDefault();
+    
   });
 
   $('#loginform').on('submit', function(e) {
@@ -112,13 +119,19 @@ $('#register').on('submit', function(e) {
         if(err) console.error(error);
         if(data.length > 0)
           {console.log("has profile")}
+          // msg = "Welcome back!";
+          
         else {
-          console.log("no profile");
+          console.log("profile to be created");
+          // msg = "Baby's first login! Welcome to Nozama!";
+          // $('.message').html("Baby's first login! Welcome to Nozama.");
           authAPI.createProfile(callback);
         };
       });
     };
     authAPI.login(credentials, loginCb);
+    $('.message').html("Welcome!");
+    // msg("Welcome back!");
 
     // authAPI.createProfile(function(err, data){
     //     if(err) console.error(err)

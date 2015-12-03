@@ -37,13 +37,6 @@ $('#products-show').click(function(){
 	$('#checkout').hide();
 });
 
-$('#checkout-show').click(function(){
-	$('#cart').show();
-	$('#home').hide();
-	$('#login').hide();
-	$('#products').hide();
-	$('#shop-hist').hide();
-	$('#checkout').show();
-});
+
 
 
