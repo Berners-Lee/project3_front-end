@@ -48,11 +48,12 @@ $(document).ready(function(){
     authAPI.getProfile(function(err, profile){
       console.log(profile[0].cart);
       function filterProductByCart(obj){
-        var array = obj;
-        for (var i = 0; i<array.length; i++) {
-          if(profile[0].cart.indexOf(array[i]._id) === -1) {
-            delete array[i];}
-        }
+        var array = [];
+        for (var i = 0; i < profile[0].cart.length; i++){
+          for (var j = 0; j < obj.length; j++){
+            if(profile[0].cart[i] === obj[j]._id) array.push(obj[j]);
+          }
+        };
         return array;
       };
       $.ajax({
@@ -60,8 +61,8 @@ $(document).ready(function(){
         url: "http://localhost:3000/products",
         dataType: "json"
       }).done(function(data){
-        var cart = filterProductByCart(data,profile[0].cart)
-        cart = cart.filter(function(val) { return val !== null; });
+        var cart = filterProductByCart(data);
+        //cart = cart.filter(function(val) { return val !== null; });
         var totalPrice = cart.reduce(function(sum, current){
           return sum + parseFloat(current.price);
         }, 0).toFixed(2);
@@ -77,10 +78,10 @@ $(document).ready(function(){
     });
   });
 
-  $('#checkout').click(function(){
-    authAPI.createOrder(function(err, data){
-      if(err) console.error(err)
-      console.log(data);
-    })
-  });
+  // $('#checkout').click(function(){
+  //   authAPI.createOrder(function(err, data){
+  //     if(err) console.error(err)
+  //     console.log(data);
+  //   })
+  // });
 });
