@@ -243,11 +243,11 @@
                     <td class="purchase-description">
                         <h3>{{date}}</h3>
                         {{#each product_ObjectId}}
-                        <p>{{name}}</p>
+                          <span>| {{name}} |</span>
                         {{/each}}
                     </td>
                     <td class="purchase_total">
-                        <p>$70</p>
+                        <p>${{priceTotal}}</p>
                     </td>
                 </tr>
                 {{/each}}
