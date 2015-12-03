@@ -236,36 +236,22 @@
 							<td class="total">Total</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr  style="color: black;" >
-							<td class="purchase-description">
-								<h3><a href="">2015-10-16</a></h3>
-								<p>Pencils, Ramen, Shower caddy</p>
-							</td>
-							<td class="purchase_total">
-								<p>$70</p>
-							</td>
-						</tr>
-
-						<tr  style="color: black;" >
-							<td class="purchase-description">
-								<h3><a href="">2015-08-23</a></h3>
-								<p>Superman bedding</p>
-							</td>
-							<td class="purchase_total">
-								<p>$49.99</p>
-							</td>
-						</tr>
-
-						<tr  style="color: black;" >
-							<td class="purchase-description">
-								<h3><a href="">2015-10-16</a></h3>
-								<p>Pencils, Ramen, Shower caddy</p>
-							</td>
-							<td class="purchase_total">
-								<p>$70</p>
-							</td>
-						</tr>
+					 <tbody id = "purchase-history">
+            <script id="order-history" type="text-x-handlebars-template">
+     					{{#each orders}}
+                <tr  style="color: black;" >
+                    <td class="purchase-description">
+                        <h3>2015-10-16</h3>
+                        {{#each product_ObjectId}}
+                        <p>{{name}}</p>
+                        {{/each}}
+                    </td>
+                    <td class="purchase_total">
+                        <p>$70</p>
+                    </td>
+                </tr>
+                {{/each}}
+             </script>
 					</tbody>
 				</table>
 			</div>

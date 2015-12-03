@@ -100,12 +100,50 @@ $(document).ready(function(){
 
   $('#cart-show').click(function(){
     populateCart();
-  });
 
-  // $('#checkout').click(function(){
-  //   authAPI.createOrder(function(err, data){
-  //     if(err) console.error(err)
-  //     console.log(data);
-  //   })
-  // });
-});
+     histAPI.showShopHistory(function(err, orders){
+      console.log(orders[0].product_ObjectId)
+      console.log(orders);
+      function filterOrders(products){
+        var array = products;
+        for(var i = 0; i<array.length; i++) {
+          for(var j = 0; j<orders.length; j++){
+            var prod = orders[j].product_ObjectId;
+            for(var k = 0; k<prod.length; k++){
+             if(prod[k] === array[i]._id) {
+                prod[k] = array[i];}
+            };
+          };
+
+        };
+        return orders;
+      };
+      $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/products",
+        dataType: "json"
+      }).done(function(data){
+        var history = filterOrders(data);
+        console.log(history);
+        var orderHistoryTemplate = Handlebars.compile($('#order-history').html());
+        var orderHistoryHTML = orderHistoryTemplate({orders:history});
+       $('#purchase-history').html('');
+       $('#purchase-history').append(orderHistoryHTML);
+
+      }).fail(function(data){
+        console.error(data);
+
+      }); // end of fail
+    }); // end of showShopHistory
+  }); // end of click handler
+
+  $('.update').click(function(e){
+    e.preventDefault();
+    authAPI.createOrder(function(err, data){
+      if(err) console.error(err)
+      console.log(data);
+      populateCart();
+    })
+
+  });
+}); // end of document ready
