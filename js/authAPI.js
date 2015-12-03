@@ -108,7 +108,6 @@ $(document).ready(function(){
       }
     callback(null, data);
     console.log('Registered!');
-    // msg = "You're registered! Now log in.";
     $('.message').html("You're registered! Now log in.");
     };
     authAPI.register(credentials, cb);
