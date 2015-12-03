@@ -1,5 +1,6 @@
 'use strict'
 
+var orderHistoryTemplate = Handlebars.compile($('#order-history').html());
 var cartAPI = {
 
   api_url: 'http://localhost:3000',
@@ -78,30 +79,8 @@ var populateCart = function(){
   });
 };
 
-$(document).ready(function(){
-  $('#populate-products').click(function(event){
-    var productInfo = {
-      temp: event.target.id
-    };
-    console.log(productInfo);
-    cartAPI.addCart(productInfo, callback);
-  });
-
-  $('#cart-table').click(function(event){
-    var deleteInfo = {
-      temp: event.target.id
-    };
-    console.log(deleteInfo);
-    cartAPI.deleteCart(deleteInfo, function(err){
-      if(err) console.error(err)
-      populateCart();
-    });
-  });
-
-  $('#cart-show').click(function(){
-    populateCart();
-
-     histAPI.showShopHistory(function(err, orders){
+  var populateHistory = function(){
+    histAPI.showShopHistory(function(err, orders){
       console.log(orders[0].product_ObjectId)
       console.log(orders);
       function filterOrders(products){
@@ -125,7 +104,6 @@ $(document).ready(function(){
       }).done(function(data){
         var history = filterOrders(data);
         console.log(history);
-        var orderHistoryTemplate = Handlebars.compile($('#order-history').html());
         var orderHistoryHTML = orderHistoryTemplate({orders:history});
        $('#purchase-history').html('');
        $('#purchase-history').append(orderHistoryHTML);
@@ -135,6 +113,32 @@ $(document).ready(function(){
 
       }); // end of fail
     }); // end of showShopHistory
+  };
+
+
+$(document).ready(function(){
+  $('#populate-products').click(function(event){
+    var productInfo = {
+      temp: event.target.id
+    };
+    console.log(productInfo);
+    cartAPI.addCart(productInfo, callback);
+  });
+
+  $('#cart-table').click(function(event){
+    var deleteInfo = {
+      temp: event.target.id
+    };
+    console.log(deleteInfo);
+    cartAPI.deleteCart(deleteInfo, function(err){
+      if(err) console.error(err)
+      populateCart();
+    });
+  });
+
+  $('#cart-show').click(function(){
+    populateCart();
+    populateHistory();
   }); // end of click handler
 
   $('.update').click(function(e){
@@ -143,6 +147,7 @@ $(document).ready(function(){
       if(err) console.error(err)
       console.log(data);
       populateCart();
+      populateHistory();
     })
 
   });
