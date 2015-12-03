@@ -34,6 +34,16 @@ var authAPI = {
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
       dataType: 'json'
+    }, callback);     
+  },
+
+  logout: function(callback){
+    this.ajax({
+      method: 'POST',
+      url: this.api_url+'/logout',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify({}),
+      dataType: 'json'
     }, callback);
   },
 
@@ -85,12 +95,10 @@ var callback = function(error, data) {
 };
 
 $(document).ready(function(){
+  $('#logout-show').hide();
 
-// var msg = function(message) {
-//   $('.message').text(message);
-// };
 
-$('#register').on('submit', function(e) {
+  $('#register').on('submit', function(e) {
     e.preventDefault();
     var credentials = form2object(this);
     var cb = function cb(error, data) {
@@ -122,12 +130,15 @@ $('#register').on('submit', function(e) {
         if(err) console.error(error);
         if(data.length > 0) {
           console.log("has profile");
-          $('.message').html("Welcome back!");
-
+          $('#login-show').hide();
+          $('#logout-show').show();
+          $('#message').html("Welcome back!");
         }
         
         else {
           console.log("profile to be created");
+          $('#login-show').hide();
+          $('#logout-show').show();
           $('.message').html("Welcome to Nozama!");
           authAPI.createProfile(callback);
         };
@@ -142,7 +153,17 @@ $('#register').on('submit', function(e) {
     // });
   });
 
-
+  $('#logout-show').on('click', function(e){
+    e.preventDefault();
+    var cb = function cb(error, data) {
+      if (error) {
+        callback(error);
+      };
+    callback(null, data);
+    $('#cart-table').html('');
+  };
+    authAPI.logout(cb);
+  });
 
 });
 
