@@ -200,17 +200,7 @@
 						<li><span style="float: left">Total</span> $<span id="total-price"></span></li>
 					</ul>
 					<a class="btn btn-default update" style="float: left; margin-top: -1px;">Update</a>
-						<form action="http://localhost:3000/charges" method="POST" id="checkout-show">
-						  <script
-						    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-						    data-key="pk_test_NWkoskZLdjXlYqbHY3jG1wkN"
-						    data-image="/img/documentation/checkout/marketplace.png"
-						    data-name="Nozama"
-						    data-description="Ready to Checkout?"
-						    data-amount="2000"
-						    data-locale="auto">
-						  </script>
-						</form>
+					<button id="customButton">Purchase</button>
 				</div>
 			</div>
 		</div>
@@ -353,16 +343,18 @@
 
 
     <script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/handlebarsjs/4.0.4/handlebars.js"></script>
     <script src="js/handlebars-template.js"></script>
     <script src="js/navigation.js"></script>
     <script type="text/javascript" src="js/authAPI.js" defer charset="utf-8"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="js/cartAPI.js"></script>
     <script src="js/shophist.js"></script>
     <script src="js/checkout.js"></script>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 'use strict'
-
+var totalPrice = 0;
 var orderHistoryTemplate = Handlebars.compile($('#order-history').html());
+
 var cartAPI = {
 
   api_url: 'http://localhost:3000',
@@ -36,6 +37,15 @@ var cartAPI = {
       data: JSON.stringify(productInfo),
       dataType: 'json'
     }, callback);
+  },
+
+  charge: function(data, callback){
+    this.ajax({
+      method: 'POST',
+      url: this.api_url + '/charges',
+      data: data,
+      dataType: 'json'
+    }, callback)
   }
 };
 
@@ -65,7 +75,7 @@ var populateCart = function(){
     }).done(function(data){
       var cart = filterProductByCart(data);
       //cart = cart.filter(function(val) { return val !== null; });
-      var totalPrice = cart.reduce(function(sum, current){
+      totalPrice = cart.reduce(function(sum, current){
         return sum + parseFloat(current.price);
       }, 0).toFixed(2);
       var cartIndexTemplate = Handlebars.compile($('#cart-index').html());
@@ -79,41 +89,64 @@ var populateCart = function(){
   });
 };
 
-  var populateHistory = function(){
-    histAPI.showShopHistory(function(err, orders){
-      console.log(orders[0].product_ObjectId)
-      console.log(orders);
-      function filterOrders(products){
-        var array = products;
-        for(var i = 0; i<array.length; i++) {
-          for(var j = 0; j<orders.length; j++){
-            var prod = orders[j].product_ObjectId;
-            for(var k = 0; k<prod.length; k++){
-             if(prod[k] === array[i]._id) {
-                prod[k] = array[i];}
-            };
+var populateHistory = function(){
+  histAPI.showShopHistory(function(err, orders){
+    function filterOrders(products){
+      var array = products;
+      for(var i = 0; i<array.length; i++) {
+        for(var j = 0; j<orders.length; j++){
+          var prod = orders[j].product_ObjectId;
+          for(var k = 0; k<prod.length; k++){
+           if(prod[k] === array[i]._id) {
+              prod[k] = array[i];}
           };
-
         };
-        return orders;
+
       };
-      $.ajax({
-        method: "GET",
-        url: "http://localhost:3000/products",
-        dataType: "json"
-      }).done(function(data){
-        var history = filterOrders(data);
-        console.log(history);
-        var orderHistoryHTML = orderHistoryTemplate({orders:history});
-       $('#purchase-history').html('');
-       $('#purchase-history').append(orderHistoryHTML);
+      return orders;
+    };
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:3000/products",
+      dataType: "json"
+    }).done(function(data){
+      var history = filterOrders(data);
+      console.log(history);
+      var orderHistoryHTML = orderHistoryTemplate({orders:history});
+     $('#purchase-history').html('');
+     $('#purchase-history').append(orderHistoryHTML);
 
-      }).fail(function(data){
-        console.error(data);
+    }).fail(function(data){
+      console.error(data);
 
-      }); // end of fail
-    }); // end of showShopHistory
-  };
+    }); // end of fail
+  }); // end of showShopHistory
+};
+
+var handler = StripeCheckout.configure({
+  key: 'pk_test_NWkoskZLdjXlYqbHY3jG1wkN',
+  image: '/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // Use the token to create the charge with a server-side script.
+    // You can access the token ID with `token.id`
+    var credentials = {
+      stripeToken: token.id,
+      amount: totalPrice*100
+    };
+    //console.log(credentials);
+    cartAPI.charge(credentials,function(err, req){
+      $('#cart-table').html('');
+      $('#total-price').html('0.00');
+      populateHistory();
+    });
+  },
+});
+
+// Close Checkout on page navigation
+$(window).on('popstate', function() {
+  handler.close();
+});
 
 
 $(document).ready(function(){
@@ -149,6 +182,16 @@ $(document).ready(function(){
       populateCart();
       populateHistory();
     })
+  });
 
+
+  $('#customButton').on('click', function(e) {
+    e.preventDefault();
+    // Open Checkout with further options
+    handler.open({
+      name: 'Nozama',
+      description: 'Reday to checkout?',
+      amount: totalPrice*100
+    });
   });
 }); // end of document ready
