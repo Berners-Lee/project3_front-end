@@ -37,6 +37,13 @@ $('#products-show').click(function(){
 	$('#checkout').hide();
 });
 
+$('#return-home').click(function(){
+	$('#cart').hide();
+	$('#home').show();
+	$('#login').hide();
+	$('#products').hide();
+	$('#checkout').hide();
+});
 
 
 

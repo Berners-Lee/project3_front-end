@@ -113,25 +113,28 @@ $('#register').on('submit', function(e) {
     var loginCb = function (error, data) {
       if (error) {
         callback(error);
+        $('.message').html("Not logged in. Try again?");
         //return;
       }
+      $('.message').html("");
+
       authAPI.getProfile(function(err, data){
         if(err) console.error(error);
-        if(data.length > 0)
-          {console.log("has profile")}
-          // msg = "Welcome back!";
-          
+        if(data.length > 0) {
+          console.log("has profile");
+          $('.message').html("Welcome back!");
+
+        }
+        
         else {
           console.log("profile to be created");
-          // msg = "Baby's first login! Welcome to Nozama!";
-          // $('.message').html("Baby's first login! Welcome to Nozama.");
+          $('.message').html("Welcome to Nozama!");
           authAPI.createProfile(callback);
         };
       });
     };
     authAPI.login(credentials, loginCb);
-    $('.message').html("Welcome!");
-    // msg("Welcome back!");
+    
 
     // authAPI.createProfile(function(err, data){
     //     if(err) console.error(err)
