@@ -45,6 +45,14 @@ $('#products-show').click(function(){
 	$('#checkout').hide();
 });
 
+$('#search-show').click(function(){
+	$('#cart').hide();
+	$('#home').hide();
+	$('#login').hide();
+	$('#products').show();
+	$('#checkout').hide();
+});
+
 $('#return-home').click(function(){
 	$('#cart').hide();
 	$('#home').show();

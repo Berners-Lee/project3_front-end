@@ -1,4 +1,4 @@
-
+var productIndexTemplate = Handlebars.compile($('#product-index').html());
 $('#all').click(function(e){
   $.ajax({
     method: "GET",
@@ -72,4 +72,20 @@ $('#food').click(function(e){
   }).fail(function(data){
     console.error(data);
   });
+});
+
+$('#search-form').on('submit', function(e){
+    e.preventDefault();
+    var search = $('#search-input').val();
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:3000/products?name=" + search,
+      dataType: "json"
+    }).done(function(data){
+      productHTML = productIndexTemplate({product: data});
+      $('#populate-products').html('');
+      $('#populate-products').append(productHTML);
+    }).fail(function(data){
+      console.error(data);
+    });
 });
