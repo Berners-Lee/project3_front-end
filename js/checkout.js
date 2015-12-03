@@ -29,18 +29,16 @@ var paymentAPI = {
 
 $(document).ready(function(){
 
-$('#submit-payment').on('click', function(e) {
-    var cb = function cb(error, data) {
-      if (error) {
-        callback(error);
-        return;
-      }
-      callback(null, data);
-    };
-    paymentAPI.createOrder(cb);
+$('#checkout-show').submit(function(e) {
     e.preventDefault();
+    console.log("poop");
+  //   var cb = function cb(error, data) {
+  //     if (error) {
+  //       callback(error);
+  //       return;
+  //     }
+  //     callback(null, data);
+  //   };
+  //   paymentAPI.createOrder(cb);
   });
-
-
-
 });
