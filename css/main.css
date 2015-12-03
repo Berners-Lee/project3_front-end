@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-.btn:hover, 
+.btn:hover,
 .btn:focus{
   outline: none;
   box-shadow: none;
@@ -232,7 +232,7 @@ a#scrollUp i{
 
 /*  Dropdown menu*/
 
-.navbar-header 
+.navbar-header
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -247,6 +247,10 @@ a#scrollUp i{
   animation: fadeInUp 400ms;
 }
 
+.nav.navbar-nav > li:hover > ul.sub-menu >li:hover{
+    background: rgba(0, 0, 0, 0.6);
+
+}
 ul.sub-menu {
 	position: absolute;
 	top: 30px;
@@ -265,6 +269,7 @@ ul.sub-menu {
 .dropdown ul.sub-menu li .active{
   color: #35106E;
   padding-left: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -285,7 +290,7 @@ ul.sub-menu {
 }
 
 .fa-angle-down{
-  padding-left: 5px; 
+  padding-left: 5px;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -301,7 +306,7 @@ ul.sub-menu {
     transform: translateY(0);
   }
 }
-  
+
 /*************************
 *******Footer CSS******
 **************************/
@@ -472,7 +477,7 @@ ul.sub-menu {
   font-size: 20px;
 }
 
-.searchform  button:hover, 
+.searchform  button:hover,
 .searchform  button:focus{
 	background-color:#35106E;
 }
@@ -1499,7 +1504,7 @@ h2.title {
   font-size: 16px;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-  
+
 }
 
 
@@ -1779,27 +1784,27 @@ h2.title {
   margin-right: 30px;
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result {
   margin-bottom: 10px;
   margin-top: 35px;
   color: #696763
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result tr {
   border-bottom: 0
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result span {
   color: #35106E;
   font-weight: 700;
   font-size: 16px
 }
 
-#cart_items .cart_info 
-.table.table-condensed.total-result 
+#cart_items .cart_info
+.table.table-condensed.total-result
 .shipping-cost {
   border-bottom: 1px solid #F7F7F0;
 }
