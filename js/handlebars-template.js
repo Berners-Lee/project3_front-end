@@ -17,7 +17,7 @@ $('#all').click(function(e){
 $('#dorm').click(function(e){
   $.ajax({
     method: "GET",
-    url: "https://peaceful-plains-2243.herokuapp.com/dorm",
+    url: "https://peaceful-plains-2243.herokuapp.com/products/dorm",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
