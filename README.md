@@ -48,6 +48,7 @@ Before coding, we organized our data models early on, though we were still strug
 
 ### Wireframes and planning
 
+<img src="https://cloud.githubusercontent.com/assets/14168220/11591868/09ec8990-9a69-11e5-833f-36d1bf9ad7cf.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591869/0bf709ae-9a69-11e5-8f05-27e1fb079765.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591870/0d22a46e-9a69-11e5-9005-deb30e803d91.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591871/0e40df64-9a69-11e5-916b-7a0b8183f245.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591873/0fcd8efe-9a69-11e5-98fe-755723b97736.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591876/11ab4c98-9a69-11e5-8cad-267682cb1a44.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591885/1cfa0a4e-9a69-11e5-8e5b-60b059795a05.jpg" width="15%"></img> 
 
 ### Other things you should know
 * [Deployed front-end] 
