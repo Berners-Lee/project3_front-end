@@ -10,7 +10,7 @@ Nozama (built by Team Berners-Lee: Dave, Meng, and Sarabrent), is an e-commerce 
 - register,
 - log in,
 - browse items -- all, or by category (because maybe they do/don't know what they're looking for),
-- search by exact match or partial match in product titles (because maybe they know exactly what they're looking for, or at least partially) [note: this is still getting worked out at the time of this README edit],
+- search by exact match or partial match in product titles (because maybe they know exactly what they're looking for, or at least partially),
 - add things to a cart, including multiples of a product,
 - delete things from a cart,
 - check out and pay using Stripe (because it's "easy"),
