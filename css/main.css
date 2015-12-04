@@ -182,8 +182,8 @@ a#scrollUp i{
 
 
 .header-bottom {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .navbar-collapse.collapse{
@@ -411,13 +411,13 @@ ul.sub-menu {
 }
 
 .footer-widget {
-  margin-bottom: 68px;
+  margin-bottom: 5px;
 }
 
 .footer-widget .container {
   border-top: 1px solid #FFFFFF;
-  padding-top: 15px;
-  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .single-widget h2 {
@@ -515,7 +515,7 @@ ul.sub-menu {
 
 
 #slider {
-  padding-bottom: 45px;
+  padding-bottom: 0px;
 }
 
 .carousel-indicators li {
