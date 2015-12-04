@@ -193,21 +193,4 @@ $(document).ready(function(){
       amount: totalPrice*100
     });
   });
-
-  $('#search-form').on('submit', function(e){
-    e.preventDefault();
-    var search = $('#search-input').val();
-    $.ajax({
-      method: "GET",
-      url: "https://peaceful-plains-2243.herokuapp.com/products?name=" + search,
-      dataType: "json"
-    }).done(function(data){
-      console.log(data);
-    }).fail(function(data){
-      console.error(data);
-    });
-
-    // {name: input}
-
-  });
 }); // end of document ready
