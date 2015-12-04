@@ -24,6 +24,7 @@ On the front end, we used
 - jQuery
 - Ajax
 - HTML / CSS
+- Bootstrap
 
 ### Approach
 
@@ -43,7 +44,7 @@ Before coding, we organized our data models early on, though we were still strug
 
 ##### Unsolved issues
 
-???
+- Given more time, we'd like to add reviews, sort products by release date...
 
 ### Wireframes and planning
 
@@ -53,4 +54,4 @@ Before coding, we organized our data models early on, though we were still strug
 * [Backend repo] 
 
 [Backend repo]: <https://github.com/Berners-Lee/project3_back-end>
-[Deployed front-end]: <>
+[Deployed front-end]: <http://berners-lee.github.io/project3_front-end/>
