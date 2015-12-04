@@ -121,7 +121,7 @@ $(document).ready(function(){
       if (error) {
         callback(error);
         $('.message').html("Not logged in. Try again?");
-        //return;
+        // return;
       }
       $('.message').html("");
 
@@ -159,7 +159,10 @@ $(document).ready(function(){
         callback(error);
       };
     callback(null, data);
+    $('#login-show').show();
+    $('#logout-show').hide();
     $('#cart-table').html('');
+    $('.message').html("Please Log in.");
   };
     authAPI.logout(cb);
   });
