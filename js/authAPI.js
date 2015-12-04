@@ -121,7 +121,7 @@ $(document).ready(function(){
       if (error) {
         callback(error);
         $('.message').html("Not logged in. Try again?");
-        //return;
+        // return;
       }
       $('.message').html("");
 
