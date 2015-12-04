@@ -159,7 +159,10 @@ $(document).ready(function(){
         callback(error);
       };
     callback(null, data);
+    $('#login-show').show();
+    $('#logout-show').hide();
     $('#cart-table').html('');
+    $('.message').html("Please Log in.");
   };
     authAPI.logout(cb);
   });
