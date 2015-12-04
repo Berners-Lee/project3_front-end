@@ -82,6 +82,10 @@ $('#search-form').on('submit', function(e){
       url: "https://peaceful-plains-2243.herokuapp.com/products?name=" + search,
       dataType: "json"
     }).done(function(data){
+      data = data.reduce(function(a, b) {
+        return a.concat(b);
+      }, []);
+      console.log(data);
       productHTML = productIndexTemplate({product: data});
       $('#populate-products').html('');
       $('#populate-products').append(productHTML);
