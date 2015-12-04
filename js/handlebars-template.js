@@ -2,7 +2,7 @@ var productIndexTemplate = Handlebars.compile($('#product-index').html());
 $('#all').click(function(e){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/products",
+    url: "https://peaceful-plains-2243.herokuapp.com/products",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
@@ -17,7 +17,7 @@ $('#all').click(function(e){
 $('#dorm').click(function(e){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/products/dorm",
+    url: "https://peaceful-plains-2243.herokuapp.com/dorm",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
@@ -32,7 +32,7 @@ $('#dorm').click(function(e){
 $('#school').click(function(e){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/products/school",
+    url: "https://peaceful-plains-2243.herokuapp.com/products/school",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
@@ -47,7 +47,7 @@ $('#school').click(function(e){
 $('#fun').click(function(e){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/products/fun",
+    url: "https://peaceful-plains-2243.herokuapp.com/products/fun",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
@@ -62,7 +62,7 @@ $('#fun').click(function(e){
 $('#food').click(function(e){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/products/food",
+    url: "https://peaceful-plains-2243.herokuapp.com/products/food",
     dataType: "json"
   }).done(function(data){
     var productIndexTemplate = Handlebars.compile($('#product-index').html());
@@ -79,7 +79,7 @@ $('#search-form').on('submit', function(e){
     var search = $('#search-input').val();
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/products?name=" + search,
+      url: "https://peaceful-plains-2243.herokuapp.com/products?name=" + search,
       dataType: "json"
     }).done(function(data){
       productHTML = productIndexTemplate({product: data});

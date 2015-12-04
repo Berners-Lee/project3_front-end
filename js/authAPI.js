@@ -2,7 +2,7 @@
 
 var authAPI = {
 
-  api_url: 'http://localhost:3000',
+  api_url: 'https://peaceful-plains-2243.herokuapp.com',
 
   ajax: function(config, cb){
     $.ajaxSetup({
@@ -34,7 +34,7 @@ var authAPI = {
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
       dataType: 'json'
-    }, callback);     
+    }, callback);
   },
 
   logout: function(callback){
@@ -111,7 +111,7 @@ $(document).ready(function(){
     $('.message').html("You're registered! Now log in.");
     };
     authAPI.register(credentials, cb);
-    
+
   });
 
   $('#loginform').on('submit', function(e) {
@@ -133,7 +133,7 @@ $(document).ready(function(){
           $('#logout-show').show();
           $('#message').html("Welcome back!");
         }
-        
+
         else {
           console.log("profile to be created");
           $('#login-show').hide();
@@ -144,7 +144,7 @@ $(document).ready(function(){
       });
     };
     authAPI.login(credentials, loginCb);
-    
+
 
     // authAPI.createProfile(function(err, data){
     //     if(err) console.error(err)

@@ -2,7 +2,7 @@
 
 var histAPI = {
 
-  api_url: 'http://localhost:3000',
+  api_url: 'https://peaceful-plains-2243.herokuapp.com',
 
   ajax: function(config, cb){
     $.ajaxSetup({

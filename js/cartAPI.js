@@ -4,7 +4,7 @@ var orderHistoryTemplate = Handlebars.compile($('#order-history').html());
 
 var cartAPI = {
 
-  api_url: 'http://localhost:3000',
+  api_url: 'https://peaceful-plains-2243.herokuapp.com',
 
   ajax: function(config, cb){
     $.ajaxSetup({
@@ -70,7 +70,7 @@ var populateCart = function(){
     };
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/products",
+      url: "https://peaceful-plains-2243.herokuapp.com/products",
       dataType: "json"
     }).done(function(data){
       var cart = filterProductByCart(data);
@@ -107,7 +107,7 @@ var populateHistory = function(){
     };
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/products",
+      url: "https://peaceful-plains-2243.herokuapp.com/products",
       dataType: "json"
     }).done(function(data){
       var history = filterOrders(data);
@@ -199,7 +199,7 @@ $(document).ready(function(){
     var search = $('#search-input').val();
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/products?name=" + search,
+      url: "https://peaceful-plains-2243.herokuapp.com/products?name=" + search,
       dataType: "json"
     }).done(function(data){
       console.log(data);
