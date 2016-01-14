@@ -10,7 +10,7 @@ Nozama (built by Team Berners-Lee: Dave, Meng, and Sarabrent), is an e-commerce 
 - register,
 - log in,
 - browse items -- all, or by category (because maybe they do/don't know what they're looking for),
-- search by exact match in product titles (because maybe they know exactly what they're looking for, or at least partially),
+- search by exact match or partial match in product titles (because maybe they know exactly what they're looking for, or at least partially),
 - add things to a cart, including multiples of a product,
 - delete things from a cart,
 - check out and pay using Stripe (because it's "easy"),
@@ -44,10 +44,15 @@ Before coding, we organized our data models early on, though we were still strug
 
 ##### Unsolved issues
 
-- Given more time, we'd like to add reviews, sort products by release date...
+Given more time, we'd like to 
+- add reviews, 
+- feel really good about the search bar,
+- sort products by release date,
+- add a social media feed to show what people are saying about Nozama.
 
 ### Wireframes and planning
 
+<img src="https://cloud.githubusercontent.com/assets/14168220/11591868/09ec8990-9a69-11e5-833f-36d1bf9ad7cf.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591869/0bf709ae-9a69-11e5-8f05-27e1fb079765.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591870/0d22a46e-9a69-11e5-9005-deb30e803d91.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591871/0e40df64-9a69-11e5-916b-7a0b8183f245.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591873/0fcd8efe-9a69-11e5-98fe-755723b97736.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591876/11ab4c98-9a69-11e5-8cad-267682cb1a44.jpg" width="15%"></img> <img src="https://cloud.githubusercontent.com/assets/14168220/11591885/1cfa0a4e-9a69-11e5-8e5b-60b059795a05.jpg" width="15%"></img> 
 
 ### Other things you should know
 * [Deployed front-end] 
